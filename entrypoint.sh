@@ -2,7 +2,7 @@
 
 TEST_PATH=$1
 
-python -m pytest $TEST_PATH > $HOME/black.patch
+python -m pytest $TEST_PATH
 
 # If pytest terminated with a nonzero exit code, fail the GitHub workflow job
 # using the special '::error' directive
@@ -10,4 +10,5 @@ python -m pytest $TEST_PATH > $HOME/black.patch
 if [ $? -ne 0 ]
 then
     echo '::error::Tests failed. Refer to the "Checks" tab for details.'
+    exit 1
 fi
