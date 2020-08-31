@@ -14,7 +14,7 @@ on:
   pull_request:
 
 jobs:
-  black-suggest:
+  run-pytest:
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
@@ -23,6 +23,6 @@ jobs:
       # Run the action that comments with suggestions
       - uses: cloudtostreet/run-pytest@v1
         with:
-          # The directory to run the formatter on. "." for everything.
+          # The directory to run pytest on. Use "." for everything.
           path: "."
 ```
