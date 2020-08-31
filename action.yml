@@ -1,0 +1,11 @@
+name: Run Pytest on PR
+inputs:
+    path:
+      description: "Directory to run pytest on"
+      required: true
+      default: .
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
