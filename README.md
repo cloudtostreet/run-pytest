@@ -14,7 +14,7 @@ on:
   pull_request:
 
 jobs:
-  black-suggest:
+  run-pytest:
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
